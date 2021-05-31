@@ -67,7 +67,7 @@ summary(raceInfluence)
 #   Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1                                   *
 #                                                                                                    *
 # Residual standard error: 3895 on 497 degrees of freedom                                            *
-# Multiple R-squared:  0.0003299,	Adjusted R-squared:  -0.001681                                     * 
+# Multiple R-squared:  0.0003299,	Adjusted R-squared:  -0.001681                                    * 
 # F-statistic: 0.164 on 1 and 497 DF,  p-value: 0.6856                                               *
 #                                                                                                    *
 # ****************************************************************************************************
@@ -101,7 +101,7 @@ summary(b)
 #   Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1                                   *
 #                                                                                                    *
 # Residual standard error: 3849 on 496 degrees of freedom                                            *
-# Multiple R-squared:  0.02585,	Adjusted R-squared:  0.02192                                         *        
+# Multiple R-squared:  0.02585,	Adjusted R-squared:  0.02192                                      *        
 # F-statistic: 6.581 on 2 and 496 DF,  p-value: 0.001511                                             *
 #                                                                                                    *
 # ****************************************************************************************************
@@ -136,7 +136,7 @@ summary(stay)
 #   Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1                                   *
 #                                                                                                    *        
 # Residual standard error: 3.363 on 495 degrees of freedom                                           *
-# Multiple R-squared:  0.007898,	Adjusted R-squared:  0.001886                                      *
+# Multiple R-squared:  0.007898,	Adjusted R-squared:  0.001886                                     *
 # F-statistic: 1.314 on 3 and 495 DF,  p-value: 0.2692                                               *
 #                                                                                                    *
 # ****************************************************************************************************
@@ -168,7 +168,7 @@ summary(compAnalysis)
 #   Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1                                   *     
 #                                                                                                    *
 # Residual standard error: 2613 on 493 degrees of freedom                                            *
-# Multiple R-squared:  0.5536,	Adjusted R-squared:  0.5491                                          *
+# Multiple R-squared:  0.5536,	Adjusted R-squared:  0.5491                                       *
 # F-statistic: 122.3 on 5 and 493 DF,  p-value: < 2.2e-16                                            *
 #                                                                                                    *
 # ****************************************************************************************************
@@ -192,23 +192,6 @@ summary(compAnalysis)
 #    i. 640 diagnosis related group had a max cost of 437978.
 
 # 5. Race or gender doesn't have that much impact on hospital cost
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
