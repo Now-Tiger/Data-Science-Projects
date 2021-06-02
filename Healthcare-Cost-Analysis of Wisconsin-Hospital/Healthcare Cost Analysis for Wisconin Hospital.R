@@ -136,7 +136,7 @@ summary(stay)
 #   Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1                                   *
 #                                                                                                    *        
 # Residual standard error: 3.363 on 495 degrees of freedom                                           *
-# Multiple R-squared:  0.007898,	Adjusted R-squared:  0.001886                                     *
+# Multiple R-squared:  0.007898,	Adjusted R-squared:  0.001886                                *
 # F-statistic: 1.314 on 3 and 495 DF,  p-value: 0.2692                                               *
 #                                                                                                    *
 # ****************************************************************************************************
@@ -168,7 +168,7 @@ summary(compAnalysis)
 #   Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1                                   *     
 #                                                                                                    *
 # Residual standard error: 2613 on 493 degrees of freedom                                            *
-# Multiple R-squared:  0.5536,	Adjusted R-squared:  0.5491                                       *
+# Multiple R-squared:  0.5536,	Adjusted R-squared:  0.5491                                          *
 # F-statistic: 122.3 on 5 and 493 DF,  p-value: < 2.2e-16                                            *
 #                                                                                                    *
 # ****************************************************************************************************
@@ -186,12 +186,12 @@ summary(compAnalysis)
 # 2. Healthcare cost is the most for patients in the 0-1 yrs age group category.
 #    i. Maximum expenditure for 0-1 yr is 678118
 
-# 3. Length of Stay increases the hospital cost.
+# 3. Length of Stay increases the hospital cost increases.
 
 # 4. All Patient Refined Diagnosis Related Groups also affects healthcare cost.
 #    i. 640 diagnosis related group had a max cost of 437978.
 
-# 5. Race or gender doesn't have that much impact on hospital cost
+# 5. Race or gender doesn't have that much impact on hospital cost.
 
 
 
