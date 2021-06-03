@@ -1,0 +1,164 @@
+---
+title: "Healthcare Cost Analysis"
+author: "Swapnil Narwade"
+date: "6/4/2021"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(cache = TRUE)
+knitr::opts_knit$set(root.dir = "D:/College/Pictures/Simplilearn DataScience/R-Programming class")
+```
+
+### **Background and Objective:**
+
+A nationwide survey of hospital costs conducted by the US Agency for Healthcare consists of hospital records of inpatient samples. The given data is restricted to the city of Wisconsin and relates to patients in the age group 0-17 years. The agency wants to analyze the data to research on healthcare costs and their utilization.
+
+
+#### **Analysis to be done:** 
+ 1. To record the patient statistics, the agency wants to find the age category of people who frequently visit the hospital and has the maximum expenditure.
+ 2. In order of severity of the diagnosis and treatments and to find out the expensive treatments, the agency wants to find the diagnosis-related group that has maximum hospitalization and expenditure.
+ 3. To make sure that there is no malpractice, the agency needs to analyze if the race of the patient is related to the hospitalization costs.
+ 4. To properly utilize the costs, the agency has to analyze the severity of the hospital costs by age and gender for the proper allocation of resources.
+ 5. Since the length of stay is the crucial factor for inpatients, the agency wants to find if the length of stay can be predicted from age, gender, and race.
+ 6. To perform a complete analysis, the agency wants to find the variable that mainly affects hospital costs.
+
+```{r loadData}
+# Load the Hospital dataset :
+hosp_data <- read.csv('HospitalCosts.csv')
+head(hosp_data)
+```
+##### **1.To record the patient statistics, the agency wants to find the age category of people who frequently visit the hospital and has the maximum expenditure.**
+
+```{r}
+# Treating missing values first.
+colSums(is.na(hosp_data))
+hosp_data <- na.omit(hosp_data)
+colSums(is.na(hosp_data))
+```
+
+```{r}
+# patient statistics : Age group who frequently visits hospital
+summary(as.factor(hosp_data$AGE))
+max(table(hosp_data$AGE))
+which.max(table(hosp_data$AGE))
+```
+
+* We can say age group 0 to 1 visits the hospital most.
+
+
+```{r}
+# Histogram of Age group to understand frequency of particular age group visiting hospital :
+hist(hosp_data$AGE, main = 'Histogram of Age Group and their hospital visits',
+     xlab = 'Age group', border = 'black', col = c('light blue', 'dark green'), xlim = c(0,20), ylim = c(0,350))
+```
+
+```{r}
+# Summarizing total expenditure based on age group :
+ExpBasedAge <- aggregate(TOTCHG ~ AGE, data = hosp_data, sum)
+print(paste('Total Expenditure =', max(ExpBasedAge)))
+```
+
+* **Total Expenditure is 678,118 $ on 0 to 1 years age group**
+
+```{r}
+# Visualization : Age vs Expenditure
+barplot(tapply(ExpBasedAge$TOTCHG, ExpBasedAge$AGE, FUN = sum), main = 'Age vs Expenditure',
+        xlab='Age group', ylab = 'Expenses', border='black', col = 'darkorange', xlim = c(0,20))
+```
+
+##### **2. In order of severity of the diagnosis and treatments and to find out the expensive treatments, the agency wants to find the **
+```{r}
+summary(as.factor(hosp_data$APRDRG))
+DiagnosisCost <- aggregate(TOTCHG ~ APRDRG, data = hosp_data, FUN = sum)
+DiagnosisCost[which.max(DiagnosisCost$TOTCHG),]
+```
+
+* **640 diagnosis related group had a max cost of 437,978 $**
+```{}
+
+```
+##### **3. To make sure that there is no malpractice, the agency needs to analyze if the race of the patient is related to the hospitalization costs**
+```{r}
+summary(as.factor(hosp_data$RACE))
+raceInfluence <- lm(hosp_data$TOTCHG ~ hosp_data$RACE)
+summary(raceInfluence)
+```
+* **Here p-value is 0.69 it is much higher than 0.5**
+* **We can say that race doesn't affect the hospitalization costs.**
+* **Hence there is no malpractice in the hospital.**
+```{}
+
+```
+##### **4.To properly utilize the costs, the agency has to analyze the severity of the hospital costs by age and gender for the proper allocation of resources.**
+```{r}
+table(hosp_data$FEMALE)
+a <- aov(TOTCHG ~ AGE + FEMALE, data = hosp_data)
+summary(a)
+b <- lm(TOTCHG ~ AGE + FEMALE, data = hosp_data)
+summary(b)
+```
+* **Since the p-values of Age is much lesser than 0.05, it means Age has the most statistical significance.** 
+* **Similarly, gender is also less than 0.05.** 
+* **Hence, we can conclude that the model is statistically significant.**
+```{}
+
+```
+##### **5. Since the length of stay is the crucial factor for inpatients, the agency wants to find if the length of stay can be predicted from age, gender, and race.**
+```{r}
+table(hosp_data$LOS)
+stay <- aov(LOS ~ AGE + FEMALE + RACE, data = hosp_data)
+summary(stay)
+stay <- lm(LOS ~ AGE + FEMALE + RACE, data = hosp_data)
+summary(stay)
+```
+* **The p-value is higher than 0.05 for age, gender and race, indicating there is no linear relationship between these variables and length of stay.**
+* **Hence, age, gender and race cannot be used to predict the length of stay of inpatients.**      
+
+```{}
+
+```
+
+##### **6.To perform a complete analysis, the agency wants to find the variable that mainly affects hospital costs.**
+
+```{r}
+compAnalysis <- aov(TOTCHG ~., data = hosp_data)
+summary(compAnalysis)
+compAnalysis <- lm(TOTCHG ~., data = hosp_data)
+summary(compAnalysis)
+```
+
+* **We can say that Age, Length of stay (LOS) and patient refined diagnosis related groups(APRDRG) have low p-value and three stars next to it. So they are the ones with statistical significance.**
+* **These three variables mainly effects the hospital cost.**
+```{}
+
+```
+
+### **Analysis Conclusion :**
+ 1. Health care costs is dependent on age, length of stay and the diagnosis type.
+
+ 2. Healthcare cost is the most for patients in the 0-1 yrs age group category.
+    i. Maximum expenditure for 0-1 yr is 678118$
+
+ 3. Length of Stay increases the hospital cost.
+
+ 4. All Patient Refined Diagnosis Related Groups also affects healthcare cost.
+    i. 640 diagnosis related group had a max cost of 437978$
+
+ 5. Race or gender doesn't have that much impact on hospital cost
+
+
+
+
+```{}
+
+
+```
+
+
+
+
+
+
