@@ -3,7 +3,8 @@
 # You are a public health researcher interested in social factors that influence heart disease. 
 # You survey 500 towns and gather data on the percentage of people in each town who smoke, 
 # the percentage of people in each town who bike to work, and the percentage of people in each town who have heart disease.
-# Because you have two independent variables and one dependent variable, and all your variables are quantitative, you can use multiple linear regression to analyze the relationship between them.
+# Because you have two independent variables and one dependent variable, and all your variables are quantitative, you can use multiple linear regression to analyze the 
+# relationship between them.
 
 library(ggplot2)
 library(dplyr)
@@ -144,11 +145,11 @@ heart.plot + annotate(geom="text", x=30, y=1.75, label=" = 15 + (-0.2*biking) + 
 
 
 
-# **************************************************************************************************************
+# ***************************************************************************************************************************
 #
 # Reporting results of simple linear regression : 
 #
-# We found a significant relationship between income and happiness (p < 0.001, R2 = 0.73 ± 0.0193), with a 0.73-unit 
+# We found a significant relationship between income and happiness (p < 0.001, R2 = 0.73 Â± 0.0193), with a 0.73-unit 
 # increase in reported happiness for every $10,000 increase in income.
 #
 #
@@ -157,18 +158,10 @@ heart.plot + annotate(geom="text", x=30, y=1.75, label=" = 15 + (-0.2*biking) + 
 # 1. In our survey of 500 towns, we found significant relationships between the frequency of biking to work and the 
 # frequency of heart disease and the frequency of smoking and frequency of heart disease (p < 0 and p<0.001, respectively).
 #
-# 2. Specifically we found a 0.2% decrease (± 0.0014) in the frequency of heart disease for every 1% increase in biking, 
-# and a 0.178% increase (± 0.0035) in the frequency of heart disease for every 1% increase in smoking.
+# 2. Specifically we found a 0.2% decrease (Â± 0.0014) in the frequency of heart disease for every 1% increase in biking, 
+# and a 0.178% increase (Â± 0.0035) in the frequency of heart disease for every 1% increase in smoking.
 #
-# **************************************************************************************************************
-
-
-
-
-
-
-
-
+# ***************************************************************************************************************************
 
 
 
