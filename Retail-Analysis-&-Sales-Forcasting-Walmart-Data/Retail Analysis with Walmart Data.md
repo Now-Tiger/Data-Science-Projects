@@ -1289,7 +1289,7 @@ Errors.head()
 > * Errors are not huge to decline our model also the __variance__ is good.
 > * Therefore we accept this Model - __RandomForest Regressor__.
 
-$Swapnil$  $Narwade$
+_Swapnil Narwade_
 > *swapnil.narwade3@gmail.com* 🦄
 
 
