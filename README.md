@@ -1,2 +1,4 @@
 # Data-Science-Projects
-All the data science projects and practices will be here, developed in R and Python.
+Data Science Projects Using Python and a little R.
+
+This repository is a place to share my code and notebooks for numerous data science projects.
