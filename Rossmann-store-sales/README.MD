@@ -1,5 +1,5 @@
 ## Note :
-__Due to large size of the notebook its hard to upload here, so please click [here](https://www.kaggle.com/swapnilnarwade/covid-19-student-s-survey)__
+__Due to large size of the notebook its hard to upload here, so please click [here](https://www.kaggle.com/swapnilnarwade/xgboost-rossmann-store-sales)__
 
 The following topics are covered in this Notebook:
 
@@ -18,4 +18,4 @@ This notebook takes a practical and coding-focused approach. We'll learn gradien
 >
 > With thousands of individual managers predicting sales based on their unique circumstances, the accuracy of results can be quite varied. You are provided with historical sales data for 1,115 Rossmann stores. The task is to forecast the "Sales" column for the test set. Note that some stores in the dataset were temporarily closed for refurbishment.
 >
-> View and download the data here: https://www.kaggle.com/c/rossmann-store-sales/data
+> View and download the data [here](https://www.kaggle.com/c/rossmann-store-sales/data)
