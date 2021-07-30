@@ -1,4 +1,7 @@
-The following topics are covered in this Noteboo:
+## Note :
+__Due to large size of the notebook its hard to upload here, so please click [here](https://www.kaggle.com/swapnilnarwade/covid-19-student-s-survey)__
+
+The following topics are covered in this Notebook:
 
 - Downloading a real-world dataset from a Kaggle competition
 - Performing feature engineering and prepare the dataset for training
