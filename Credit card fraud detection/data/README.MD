@@ -1,1 +1,1 @@
-- csv file is here for the notebook
+- due to extreme size it impossible to upload. [Here](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud) is the link to download dataset.
