@@ -69,11 +69,7 @@ if __name__ == "__main__":
 
     models = {"linear reg": LinearRegression(),
               "DecisionTree": DecisionTreeRegressor(),
-              "RandomForest": RandomForestRegressor(max_depth=8, 
-                                                    min_samples_split=2, 
-                                                    max_features=5, 
-                                                    random_state=13
-                                                   )
+              "RandomForest": RandomForestRegressor(max_depth=8, min_samples_split=2, max_features=5, random_state=13)
              }
 
     baseline_model(models)
