@@ -31,9 +31,9 @@ def model_metrics(inputs: pd.DataFrame, target: pd.Series, model, name: str) -> 
     preds = model.predict(inputs)
 
     print(f"\n---- {name} ----\n"
-          f"RMSE: {rmse(target, preds)}\n"
-          f"Accuracy: {model.score(inputs, target)}\n"
-          f"R2 score: {r2_score(target, preds)}"
+          f"RMSE: {rmse(target, preds):.3f}\n"
+          f"Accuracy: {model.score(inputs, target):.3f}\n"
+          f"R2 score: {r2_score(target, preds):.3f}"
          )
     return
 
