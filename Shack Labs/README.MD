@@ -1,6 +1,6 @@
 # Repository for Shack Labs assignments.
 
-- This repository contains there folders.
+- This repository contains three folders.
 
 1. Data 
 2. Notebooks
