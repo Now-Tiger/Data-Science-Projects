@@ -112,4 +112,4 @@ if __name__ == "__main__":
 # 19812  lord's red women's slingback peeptoes women heels              1280                   784  lord's red women's slingback peeptoes women heels              1299.0                   650.0         19.0
 # 19881  lord's antique gold women's peeptoe heels wome...              1634                  2001  lord's antique gold women's peeptoe heels wome...              1650.0                  1650.0         16.0
 
-[3789 rows x 7 columns]
+# [3789 rows x 7 columns]
