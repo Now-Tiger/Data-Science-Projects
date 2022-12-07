@@ -100,6 +100,7 @@ if __name__ == "__main__":
 # -- output --
 
 # (base) D:\>python assesment_two.py
+#                                              amz_product  amz_retail_price  amz_discounted_price                                      filpk_product  flipk_retail_price  flipk_discounted_price  retail_diff
 # 0                    alisha solid women's cycling shorts               982                   438                alisha solid women's cycling shorts               999.0                   379.0         17.0
 # 3                    alisha solid women's cycling shorts               694                   325                alisha solid women's cycling shorts               699.0                   267.0          5.0
 # 6                    alisha solid women's cycling shorts              1198                   602                alisha solid women's cycling shorts              1199.0                   479.0          1.0
@@ -111,5 +112,5 @@ if __name__ == "__main__":
 # 19788                         jiiah women's sheath dress              1043                   904                         jiiah women's sheath dress              1049.0                   734.0          6.0
 # 19812  lord's red women's slingback peeptoes women heels              1280                   784  lord's red women's slingback peeptoes women heels              1299.0                   650.0         19.0
 # 19881  lord's antique gold women's peeptoe heels wome...              1634                  2001  lord's antique gold women's peeptoe heels wome...              1650.0                  1650.0         16.0
-
+# 
 # [3789 rows x 7 columns]
