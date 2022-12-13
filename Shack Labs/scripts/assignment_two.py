@@ -76,6 +76,7 @@ def main() -> None:
                "is_FK_Advantage_product", "description","product_rating", "overall_rating", "brand", 
                "product_specifications"
                ]
+
     remove_columns(columns, amazon)
     remove_columns(columns, flipkart)
 
@@ -85,7 +86,8 @@ def main() -> None:
     amazon.rename(columns={"product_name": "amz_product", 
                            "retail_price": "amz_retail_price", 
                            "discounted_price": "amz_discounted_price"
-                           }, inplace = True
+                           }, 
+                  inplace = True
                  )
     combined_data = merge_data(amazon, flipkart)
 
