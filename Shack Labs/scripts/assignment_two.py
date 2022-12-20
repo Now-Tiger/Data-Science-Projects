@@ -19,7 +19,7 @@ def remove_columns(column_names: list, data: pd.DataFrame) -> None:
         print("empty columns list")
     elif data.shape[0] == 0:
         print(f"empty dataset: {len(data)}")
-
+        return
     data.drop(columns=column_names, inplace=True)
     return
 
@@ -30,7 +30,7 @@ def get_lowercase_text(column: str, data: pd.DataFrame) -> None:
         print(f"empty column name")
     if data.shape[0] == 0:
         print(f"empty dataset: {len(data)}")
-    
+        return
     data[column] = data[column].apply(lambda x: " ".join(x.lower() for x in x.split()))
     return
 
