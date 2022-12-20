@@ -17,8 +17,7 @@ def remove_columns(column_names: list, data: pd.DataFrame) -> None:
     """ removes columns from the dataset """
     if len(column_names) == 0:
         print("empty columns list")
-        return
-    if data.shape[0] == 0:
+    elif data.shape[0] == 0:
         print(f"empty dataset: {len(data)}")
 
     data.drop(columns=column_names, inplace=True)
@@ -29,7 +28,6 @@ def get_lowercase_text(column: str, data: pd.DataFrame) -> None:
     """ converts capital/uppercase strings or text into lowercase. """
     if column is None:
         print(f"empty column name")
-        return 
     if data.shape[0] == 0:
         print(f"empty dataset: {len(data)}")
     
@@ -57,10 +55,8 @@ def merge_data(data_one: pd.DataFrame, data_two: pd.DataFrame) -> pd.DataFrame:
 def fetch_product(product_name: str, data: pd.DataFrame, column_name: str) -> pd.DataFrame:
     """ returns matching products in the pandas dataframe formate. """
     product_name = product_name.lower()
-    
     if column_name not in data.columns:
         print(f"{column_name} not available in the dataset")
-        return
     return data[data[column_name].str.contains(product_name)]
 
 
