@@ -79,10 +79,10 @@ def main() -> None:
     get_lowercase_text('product_name', amazon)
     get_lowercase_text('product_name', flipkart)
 
-    amazon.rename(columns={"product_name": "amz_product", 
-                           "retail_price": "amz_retail_price", 
-                           "discounted_price": "amz_discounted_price"
-                           }, 
+    amazon.rename(columns = {"product_name": "amz_product", 
+                            "retail_price": "amz_retail_price", 
+                            "discounted_price": "amz_discounted_price"
+                            }, 
                   inplace = True
                  )
     combined_data = merge_data(amazon, flipkart)
