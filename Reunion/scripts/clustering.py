@@ -8,8 +8,6 @@ import pandas as pd
 import numpy as np
 
 import tensorflow as tf
-# from tensorflow import keras
-
 
 from sklearn.preprocessing import (Normalizer, StandardScaler,OneHotEncoder, LabelEncoder)
 from sklearn.model_selection import train_test_split as split
@@ -43,14 +41,12 @@ def make_inputs_for_layers(data: pd.DataFrame) -> dict:
         inputs[name] = tf.keras.Input(shape=(1,), name=name, dtype=dtype)
     return inputs
 
-
 def get_num_features(inputs_dict: dict) -> dict:
     """ Separate out the numerical columns """
     numeric_inputs = {name: input for name, input in inputs_dict.items()
                       if input.dtype == tf.float32
                      }
     return numeric_inputs
-
 
 def onehot_encoding(inputs_dict: dict, dataset: pd.DataFrame) -> dict:
     """ Separate out categorical columns and encode them as One Hot"""
@@ -63,7 +59,6 @@ def onehot_encoding(inputs_dict: dict, dataset: pd.DataFrame) -> dict:
         x = one_hot(x)
     return x
 
-
 def normalize_numericals(numerical_features: dict, x: tf.Tensor) -> tf.float32: 
     """ Data normalization on numerical inputs """
     norm = tf.keras.layers.Normalization()
@@ -74,9 +69,7 @@ def normalize_numericals(numerical_features: dict, x: tf.Tensor) -> tf.float32:
 
 if __name__ == "__main__":
     data = pd.read_csv("../src/combined_data.csv")
-    data.drop(columns=["marital_status", "has_coapplicant","has_guarantor"],
-              inplace=True
-             )
+    data.drop(columns=["marital_status", "has_coapplicant","has_guarantor"], inplace=True)
     applicant_id = data.pop("applicant_id")
     risk = data.pop("risk")
     
@@ -91,7 +84,8 @@ if __name__ == "__main__":
 
     # -- encoded data --
     encoded_cat_features = onehot_encoding(inputs, data)
-
+    
+    # -- append all features together --     
     preprocessed_inputs.append(encoded_cat_features)
 
     # -- we concatenate the preprocessed inputs into a single vector, and create the processing model 
