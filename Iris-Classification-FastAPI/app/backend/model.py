@@ -1,16 +1,14 @@
-#!/usr/bin/env/ python3
+#!/usr/bin/env/ conda: "sara"
 # -*- coding: utf-8 -*-
 import pickle
 import numpy as np
 
 from sklearn.datasets import load_iris
-from sklearn.preprocessing import (StandardScaler, Normalizer)
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import (accuracy_score, f1_score)
 from sklearn.model_selection import train_test_split as split
-from sklearn.metrics import (accuracy_score, classification_report, f1_score, roc_auc_score, roc_curve)
 
 from sklearn.linear_model import LogisticRegression
-from sklearn.svm import SVC
-
 np.random.seed(42)
 
 
@@ -33,30 +31,14 @@ if __name__ == "__main__":
     train_inputs_scaled = normalize(train_inputs)
     test_inputs_scaled = normalize(test_inputs)
 
-    logistic_reg = LogisticRegression(max_iter=300, solver='lbfgs', multi_class='multinomial')
+    logistic_reg = LogisticRegression(
+        max_iter=300, solver='lbfgs', multi_class='multinomial')
     logistic_reg.fit(train_inputs_scaled, train_target)
-    
-    # training_prediction = logistic_reg.predict(train_inputs)
-    # training_prediction_accuracy = accuracy_score(train_target, training_prediction)
-    # f1_training_score = f1_score(train_target, training_prediction, average='micro')
 
-    # test_preds = logistic_reg.predict(test_inputs_scaled)
-    # test_preds_acc = accuracy_score(test_target, test_preds)
-    # f1_test_score = f1_score(test_target, test_preds, average='micro')
-
-
-
+    # -- save the model --     
     # with open("./backend/model.pkl", 'wb') as f:
     #     pickle.dump(logistic_reg, f)
 
-    # load_model = joblib.load('./backend/model.pkl')
+    # load_model = joblib.load('./backend/model.pkl')  <<= import joblib here
     # print(load_model.score(test_inputs_scaled, test_target))
     # 0.9736842105263158
-    
-
-    svm = SVC(probability=True, max_iter=300).fit(train_inputs_scaled, train_target)
-
-    with open('./backend/svm.pkl', 'wb') as f:
-        pickle.dump(svm, f)
-
-    
